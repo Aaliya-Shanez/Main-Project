@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends "Admin/home_dupe.html" %}
+{% block body %}
+<body>
+<h1><center>Public Enquiry</center></h1>
+<form action="" method="get"><table class="table table-bordered">
+  <tr>
+    <th scope="row">Sl.No</th>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phoneno</td>
+    <td>Enquiry</td>
+      <th scope="col">&nbsp;</th>
+{#    <td>Status</td>#}
+{#      <td></td>#}
+{#      <th scope="col">&nbsp;</th>#}
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ forloop.counter }}&nbsp;</th>
+{#    <td>{{ i.ORGANIZATION }}</td>#}
+    <td>{{ i.Name }}&nbsp;</td>
+    <td>{{ i.Email }}&nbsp;</td>
+    <td>{{ i.Phoneno }}&nbsp;</td>
+    <td>{{ i.Enquiry }}&nbsp;</td>
+{#    <td>{{ i.Status }}&nbsp;</td>#}
+
+    <td><a href="mailto:{{ i.Email }}" class="btn btn-success">Reply</a></td>
+{#    <td><a href="/Scholarchain/delete_schl/{{ i.id }}" onclick="return confirm('Are You Sure')" class="btn btn-danger">Delete</a></td>#}
+  </tr>
+    {% endfor %}
+</table>
+</form></body>
+{% endblock %}
+</html>
+{#  <td>#}
+{#        {% if i.Status == 'pending' %}#}
+{#        <a href="mailto:{{ i.Email }}" onclick="window.location = '/Scholarchain/admin_reply/'" class="btn btn-success">Reply</a>#}
+{#        {% else %}#}
+{#        Replied#}
+{#        {% endif %}#}
+{#    </td>#}

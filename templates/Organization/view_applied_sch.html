@@ -1,0 +1,58 @@
+{% extends "Organization/ohomeindexdup.html" %}
+{% block body %}
+<body>
+
+<h1><center>Applied Scholarships</center></h1>
+<form action="/Scholarchain/org_verify_eligible_Applicationsser/#mid" method="post" enctype="multipart/form-data">
+    <table class="pull-left">
+  <tr>
+    <th width="168" scope="col"><input type="text" name="textfield" id="textfield" class="form-control" /></th>
+    <th width="59" scope="col"><input type="submit" name="button" id="button" value="Search"  class="btn btn-success"/></th>
+  </tr>
+</table>
+<br>
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Scholarship Name</th>
+      <th scope="col">Student</th>
+      <th scope="col">Score</th>
+      <th scope="col">Status</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in res %}
+          {% if i.index < 5%}
+
+    <tr style="color: #00ba9d">
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.Date }}</td>
+      <td>&nbsp;{{ i.ScholarShip_Name }}</td>
+      <td> <img src="{{ i.Image }}" height="120px" width="120"><br> <a href="/Scholarchain/org_view_studprof/{{ i.sid }}">{{ i.Name }}</a> </td>
+        <td>&nbsp;{{ i.score }}</td>
+        <td>&nbsp;{{ i.Status }}</td>
+     <td><a href="/Scholarchain/org_accept_applications/{{ i.id }}" class="btn btn-success">Accept</a></td>
+    <td><a href="/Scholarchain/org_accept_reject_applied_applications/{{ i.id }}" onclick="return confirm('Are You Sure')" class="btn btn-danger">Reject</a></td>
+{#      <td><a href="#">Accept</a></td>#}
+{#      <td><a href="#">Reject</a></td>#}
+    </tr>
+          {% else%}
+
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.Date }}</td>
+      <td>&nbsp;{{ i.ScholarShip_Name }}</td>
+      <td> <img src="{{ i.Image }}" height="120px" width="120"><br> <a href="/Scholarchain/org_view_studprof/{{ i.sid }}">{{ i.Name }}</a> </td>
+        <td>&nbsp;{{ i.score }}</td>
+        <td>&nbsp;{{ i.Status }}</td>
+     <td><a href="/Scholarchain/org_accept_applications/{{ i.id }}" class="btn btn-success">Accept</a></td>
+    <td><a href="/Scholarchain/org_accept_reject_applied_applications/{{ i.id }}" onclick="return confirm('Are You Sure')" class="btn btn-danger">Reject</a></td>
+{#      <td><a href="#">Accept</a></td>#}
+{#      <td><a href="#">Reject</a></td>#}
+    </tr>
+          {% endif %}
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "Admin/home_dupe.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/Scholarchain/admin_accept_reject_student/">
+<table class="table table-bordered">
+ <tr>
+    <th scope="row">Name</th>
+    <td>{{ res.STUDENT.Name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">DOB</th>
+    <td>{{  res.STUDENT.Dob }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td>{{ res.STUDENT.Email }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>{{ res.STUDENT.Phoneno }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>{{ res.STUDENT.Address }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td>{{  res.STUDENT.Place }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Pincode</th>
+    <td>{{ res.STUDENT.Pincode }}</td>
+  </tr>
+ <tr>
+    <th scope="row">District</th>
+    <td>{{  res.STUDENT.District }}</td>
+  </tr>
+  <tr>
+    <th scope="row">State</th>
+    <td>{{ res.STUDENT.Pincode }}</td>
+  </tr>
+ <tr>
+    <th scope="row">Country</th>
+    <td>{{  res.STUDENT.Country }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Parent Name</th>
+    <td>{{ res.STUDENT.Parent_Name }}</td>
+  </tr>
+ <tr>
+    <th scope="row">Latest Qualification</th>
+    <td>{{  res.STUDENT.Latest_Qualification }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Institution</th>
+    <td>{{ res.STUDENT.Institution }}</td>
+  </tr>
+
+  <tr>
+    <th scope="row">Image</th>
+    <td><img src="{{ res.STUDENT.Image }}" height="120px" width="120"><input type="hidden" value="{{ res.LOGIN.id }}" name="lid"></td>
+  </tr>
+{#    <tr>#}
+{#        <td><a href="">Back to Home</a>#}
+{#            <input type="submit" value="Accept" name="bt"> </td>#}
+{#        <td><input type="submit" value="Reject" name="bt"></td>#}
+{#    </tr>#}
+</table>
+
+    <table class="table table-bordered">
+ <tr>
+    <th scope="row">Religion</th>
+    <td>{{ res.Religion }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Caste</th>
+    <td>{{  res.Caste }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Category</th>
+    <td>{{ res.Category }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Parent_Occupation</th>
+    <td>{{ res.Parent_Occupation }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Parent_Phoneno</th>
+    <td>{{ res.Parent_Phoneno}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Income_Certificate</th>
+    <td><a href="{{ res.Income_Certificate }}"  class="btn btn-success">Download</a>
+{#        {{  res.Income_Certificate}}#}
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Birth_Certificate</th>
+    <td><a href="{{ res.Birth_Certificate }}"  class="btn btn-success">Download</a> </td>
+  </tr>
+ <tr>
+    <th scope="row">Caste_Certificate</th>
+    <td><a href="{{ res.Caste_Certificate }}"  class="btn btn-success">Download</a>
+{#        {{  res.Caste_Certificate }}#}
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Adhaar_Number</th>
+    <td>{{ res.Adhaar_Number }}</td>
+  </tr>
+ <tr>
+    <th scope="row">Family_Income</th>
+    <td>{{  res.Family_Income}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Bank_Accountno </th>
+    <td>{{ res.Bank_Accountno }}</td>
+  </tr>
+ <tr>
+    <th scope="row">Ifsc_Code </th>
+    <td>{{  res.Ifsc_Code }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Branch_Name</th>
+    <td>{{ res.Branch_Name}}</td>
+  </tr>
+
+  <tr>
+    <th scope="row">Holder_Name</th>
+    <td>{{ res.Holder_Name }}</td>
+  </tr>
+    <tr>
+        <td><a href="/Scholarchain/orga_home/">Back to Home</a>
+{#            <input type="submit" value="Accept" name="bt"> </td>#}
+{#        <td><input type="submit" value="Reject" name="bt"></td>#}
+    </tr>
+</table>
+<center><h3>Portfolio</h3></center>
+     <table class="table table-bordered">
+    <tr>
+        <th>Sl.no</th>
+      <th scope="col">Type</th>
+      <th scope="col">Institutions</th>
+      <th scope="col">Percentage</th>
+      <th scope="col">Certificates</th>
+    </tr>
+   {% for i in res1 %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.Type }}</td>
+      <td> {{ i.Institutions }}</td>
+      <td>&nbsp;{{ i.Percentage }}</td>
+        <td> <a href="{{ i.Certificates }}" download="" class="btn btn-success">Download</a></td>
+{#      <td><a href="/Scholarchain/admin_verify_student_more/{{ i.id }}#mid">More</a></td>#}
+{#      <td><a href="#">Accept</a></td>#}
+{#      <td><a href="#">Reject</a></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+
+{#</body>#}
+</html>
+{% endblock %}

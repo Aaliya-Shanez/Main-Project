@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends "Organization/ohomeindexdup.html" %}
+{% block body %}
+<body>
+<h1><center>Sponsor Request</center></h1>
+
+<form action="" method="get"><table class="table table-bordered">
+  <tr>
+    <th scope="row">Sl.No</th>
+    <td><p>ScholarshipName</p></td>
+    <td><p>Scholarship Number</p></td>
+    <td>Eligibility</td>
+    <td>Sponsor Name</td>
+      <td>Amount</td>
+    <td>Scholarship Period</td>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ forloop.counter }}&nbsp;</th>
+{#    <td>{{ i.ORGANIZATION }}</td>#}
+    <td>{{ i.ADDSCHOLARSHIPS.ScholarShip_Name }}&nbsp;</td>
+    <td>{{ i.ADDSCHOLARSHIPS.Scholarship_Number }}&nbsp;</td>
+    <td>{{ i.ADDSCHOLARSHIPS.Eligibility }}&nbsp;</td>
+    <td>{{ i.SPONSOR.Name }}&nbsp;</td>
+    <td>{{ i.ADDSCHOLARSHIPS.Amount }}&nbsp;</td>
+    <td>{{ i.ADDSCHOLARSHIPS.Scholarship_Period }}&nbsp;</td>
+{% if i.Status == 'Pending' %}
+    <td><a href="/Scholarchain/accept_sponsor_interest/{{ i.id }}" class="btn btn-success">Accept</a></td>
+    <td><a href="/Scholarchain/org_accept_reject_interested_sponsor/{{ i.id }}" onclick="return confirm('Are You Sure')" class="btn btn-danger">Reject</a></td>
+    {% else %}
+<td>    {{ i.Status }}</td>
+{% endif %}
+  </tr>
+    {% endfor %}
+</table>
+</form></body>
+{% endblock %}
+</html>

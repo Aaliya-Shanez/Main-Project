@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script>
+function validateDates() {
+    var startDate = document.getElementById("textfield3").value;
+    var endDate = document.getElementById("textfield4").value;
+
+    if (startDate && endDate) {
+        if (endDate < startDate) {
+            alert("End date must be after the start date.");
+            return false;
+        }
+    }
+    return true;
+}
+</script>
+{% extends "Organization/ohomeindexdup.html" %}
+{% block body %}
+<body>
+
+<h1><center>Add Scholarships</center></h1>
+<form action="/Scholarchain/orgAdd_Scholarships_POST/" method="post"  onsubmit="return validateDates();" enctype="multipart/form-data"><table class="table table-bordered">
+    {% csrf_token %}
+
+  <tr>
+    <th scope="row">Scholarship Name</th>
+    <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Qualification</th>
+    <td><select name="textfield2">
+            <option >SSLC</option>
+            <option >+2</option>
+            <option>Diploma</option>
+            <option >Degree</option>
+            <option>Masters</option>
+        </select></td>
+  </tr>
+    <tr>
+    <th scope="row">Score</th>
+    <td><input type="number" name="textfield17" id="textfield2" class="form-control"/></td>
+  </tr>
+
+  <tr>
+    <th scope="row">StartDate</th>
+    <td><input type="date" name="textfield3" min="{{ dt }}" id="textfield3" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">EndDate</th>
+    <td><input type="date" name="textfield4" id="textfield4"  class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Amount</th>
+    <td><input type="number" name="textfield5" id="textfield5" class="form-control" max="200000"/></td>
+  </tr>
+  <tr>
+    <th scope="row">ScholarshipNumber</th>
+    <td><input type="number" min="1" name="textfield6" id="textfield6"class="form-control" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Scholarship Period</th>
+    <td><input type="text" name="textfield7" id="textfield7" class="form-control"/></td>
+  </tr>
+   <tr>
+      <td>SchType</td>
+       <td><select name="select" id="check" onchange="check()" class="btn btn-light dropdown-toggle" style="width:206px;" required>
+
+          <option value="Arts">Arts</option>
+          <option value="Sports">Sports</option>
+          <option value="Education">Education</option>
+           <option value="Clubs">Clubs</option>
+           <option value="Others">Others</option>
+      </select></td>
+    </tr>
+  <tr>
+    <th scope="row">More</th>
+    <td><input type="text" name="textfield8" id="textfield8"class="form-control" /></td>
+  </tr>
+
+  <tr>
+    <th scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-info" /></th>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+  
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,62 @@
+{% extends "Admin/home_dupe.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/Scholarchain/admin_accept_reject_sponsor/">
+<table class="table table-bordered">
+ <tr>
+    <th scope="row">Name</th>
+    <td>{{ res.Name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td>{{ res.Email }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>{{ res.Phoneno }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>{{ res.Address }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td>{{  res.Place }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Pincode</th>
+    <td>{{ res.Pincode }}</td>
+  </tr>
+ <tr>
+    <th scope="row">District</th>
+    <td>{{  res.District }}</td>
+  </tr>
+  <tr>
+    <th scope="row">State</th>
+    <td>{{ res.Pincode }}</td>
+  </tr>
+ <tr>
+    <th scope="row">Country</th>
+    <td>{{  res.Country }}</td>
+  </tr>
+
+ <tr>
+    <th scope="row">Proof</th>
+    <td><a href="{{ res.Proof }}">download</a> </td>
+  </tr>
+     <tr>
+    <th scope="row">Image</th>
+    <td><img src="{{ res.Image }}" height="100px" width="100px"><input type="hidden" value="{{ res.LOGIN.id }}" name="lid"></td>
+  </tr>
+    <tr>
+        <td><input type="submit" value="Accept" name="bt"> </td>
+        <td><input type="submit" value="Reject" name="bt"></td>
+    </tr>
+</table>
+</form>
+</body>
+
+</body>
+</html>
+{% endblock %}

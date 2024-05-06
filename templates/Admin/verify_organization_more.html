@@ -1,0 +1,46 @@
+{% extends "Admin/home_dupe.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/Scholarchain/admin_accept_reject_org/">
+<table class="table table-bordered">
+  <tr>
+    <th scope="row">Name</th>
+    <td>{{ res.Name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">E_mail</th>
+    <td>{{  res.E_mail }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>{{ res.Phone }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>{{ res.Address }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td>{{ res.Place }}</td>
+  </tr>
+  <tr>
+    <th scope="row">District</th>
+    <td>{{  res.District }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Pincode</th>
+    <td>{{ res.Pincode }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Proof</th>
+    <td><a href="{{ res.Proof }}">download</a> <input type="hidden" value="{{ res.LOGIN.id }}" name="lid"></td>
+  </tr>
+    <tr>
+        <td><input type="submit" value="Accept" name="bt"> </td>
+        <td><input type="submit" value="Reject" name="bt"></td>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

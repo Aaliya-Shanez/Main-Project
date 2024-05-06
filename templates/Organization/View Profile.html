@@ -1,0 +1,44 @@
+{% extends "Organization/ohomeindexdup.html" %}
+{% block body %}
+
+<body><form action="" method="post"><table class="table table-bordered">
+  <tr>
+    <th scope="row">Name</th>
+    <td>&nbsp;{{ data.Name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">E-mail</th>
+    <td>&nbsp;{{ data.E_mail }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>{{ data.Phone }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>{{ data.Address }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td>{{ data.Place }}</td>
+  </tr>
+  <tr>
+    <th scope="row">District</th>
+    <td>{{ data.District }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Pincode</th>
+    <td>{{ data.Pincode }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Proof</th>
+    <td><img src="{{ data.Proof }}" height="100",width="50"> <a href="{{ data.Proof }}">View</a> </td>
+  </tr>
+  <tr>
+    <th scope="row"><a href="/Scholarchain/orgEdit_Profile/" class="btn btn-info">Edit Profile</a></th>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %} }}

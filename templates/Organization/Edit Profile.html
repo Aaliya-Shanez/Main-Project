@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends "Organization/ohomeindexdup.html" %}
+{% block body %}
+<body><form action="/Scholarchain/orgEdit_Profile_post/" method="post" enctype="multipart/form-data">
+  <table class="table table-bordered">
+    <tr>
+      <th width="118" scope="row">Name</th>
+      <td width="66"><input type="text" name="textfield" id="textfield"value="{{ data.Name }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">EMail</th>
+      <td><input type="text" name="textfield2" id="textfield2" value="{{ data.E_mail }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input type="text" name="textfield3" id="textfield3" value=" {{  data.Phone }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Address</th>
+      <td><input type="text" name="textfield4" id="textfield4" value="{{ data.Address }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" name="textfield5" id="textfield5" value="{{ data.Place }} "class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">District</th>
+      <td><input type="text" name="textfield6" id="textfield6" value="{{ data.District }}"class="form-control" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Pincode</th>
+      <td><input type="number" name="textfield7" id="textfield7" value="{{ data.Pincode }}" class="form-control"  min="600000" max="699999"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Proof</th>
+      <td><img src="{{ data.Proof }}" height="100" width="50"><a href="{{ data.Proof }}">View</a><input type="file" name="fileField" id="fileField" value="{{ data.Proof }}" /></td>
+    </tr>
+
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td><input type="submit" name="button" id="button" value="Update" class="btn btn-info"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+</html>

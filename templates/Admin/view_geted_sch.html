@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends "Admin/home_dupe.html" %}
+{% block body %}
+<body>
+<h1><center>Completed Scholarships</center></h1>
+<form action="" method="get"><table class="table table-bordered">
+  <tr>
+    <th scope="row">Sl.No</th>
+    <td>Student Name</td>
+    <td>Email</td>
+    <td>Phoneno</td>
+      <td>Latest Qualification</td>
+      <td>Percentage</td>
+      <td>Bank Accountno</td>
+{#    <td>Scholarship Name</td>#}
+{#      <td>Organization Name</td>#}
+{#      <td>Amount</td>#}
+{#      <td>Status</td>#}
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ forloop.counter }}&nbsp;</th>
+{#    <td>{{ i.ORGANIZATION }}</td>#}
+    <td>{{ i.s.STUDENT.Name }}&nbsp;</td>
+    <td>{{ i.s.STUDENT.Email }}&nbsp;</td>
+    <td>{{ i.s.STUDENT.Phoneno }}&nbsp;</td>
+      <td>{{ i.s.STUDENT.Latest_Qualification }}&nbsp;</td>
+      <td>{{ i.p.Percentage }}&nbsp;</td>
+      <td>{{ i.s1.Bank_Accountno }}&nbsp;</td>
+
+{#      <td>{{ i.ADDSCHOLARSHIPS.ScholarShip_Name }}</td>#}
+{#       <td>{{ i.ORGANIZATION.Name }}</td>#}
+{#        <td>{{ i.ADDSCHOLARSHIPS.Amount }}</td>#}
+{#      <td>{{ i.Status }}</td>#}
+
+{#    <td><img src="{{ i.Image }}" alt="" height="100px" width="100px"/>&nbsp;</td>#}
+
+{#    <td><a href="/Scholarchain/orgEditsch/{{ i.id }}" class="btn btn-success">Edit</a></td>#}
+{#    <td><a href="/Scholarchain/delete_schl/{{ i.id }}" onclick="return confirm('Are You Sure')" class="btn btn-danger">Delete</a></td>#}
+  </tr>
+    {% endfor %}
+</table>
+</form></body>
+{% endblock %}
+</html>

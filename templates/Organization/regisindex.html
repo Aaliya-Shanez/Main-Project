@@ -1,0 +1,139 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!doctype html>
+<html>
+<head>
+<title>Authentication Signup Form Flat Responsive widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Validation Signup Form Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- fonts -->
+<link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+<!-- /fonts -->
+<!-- css -->
+<link href="/static/oregist/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+<link href="/static/oregist/css/style.css" rel="stylesheet" type='text/css' media="all" />
+<!-- /css -->
+</head>
+<body>
+<h1 class="w3ls">Authentication Signup Form</h1>
+	<div class="content-agileits">
+		<form action="/Scholarchain/registration_post/" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
+            {% csrf_token %}
+             <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Name</label>
+				<input type="text" class="form-control" id="Phone" placeholder="Name" name="textfield"  required>
+				<div class="help-block with-errors"></div>
+			</div>
+            <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Email</label>
+				<input type="text" class="form-control" id="Phone" placeholder="Email" name="textfield2" pattern="[a-z_0-9]{2,30}[@][a-z]{2,10}[.][a-z.]{2,20}" required>
+				<div class="help-block with-errors"></div>
+			</div>
+{#            <div class="form-group agileinfo wthree w3-agileits agile">#}
+{#				<label for="Phone" class="control-label">Email</label>#}
+{#				<input type="text" class="form-control" id="Email" placeholder="Email" name="textfield2"  required>#}
+{#				<div class="help-block with-errors"></div>#}
+{#			</div>#}
+
+{#			<div class="form-group agileinfo wthree w3-agileits agile">#}
+{#				<label for="lastname" class="control-label">Email</label>#}
+{#				<input type="text" class="form-control" id="Email" placeholder="Email" name="textfield2"  required>#}
+{#				<div class="help-block with-errors"></div>#}
+{#			</div>#}
+			<div class="form-group w3l agileinfo wthree w3-agileits">
+				<label for="inputEmail" class="control-label">Phone</label>
+				<input type="number" class="form-control" id="Phone" max="9999999999" min="6000000000" placeholder="Phone" name="textfield3" required>
+				<div class="help-block with-errors"></div>
+			</div>
+			<div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Address</label>
+				<input type="text" class="form-control" id="Phone" placeholder="Address" name="textfield4"  required>
+				<div class="help-block with-errors"></div>
+			</div>
+            <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Place</label>
+				<input type="text" class="form-control" id="Phone" placeholder="Place" name="textfield5"  required>
+				<div class="help-block with-errors"></div>
+			</div>
+            <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">District</label>
+				<input type="text" class="form-control" id="Phone" placeholder="District" name="textfield6" required>
+				<div class="help-block with-errors"></div>
+			</div>
+             <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Pincode</label>
+				<input type="number" class="form-control" id="Phone"  placeholder="Pincode" name="textfield7" min="600000" max="699999" required>
+				<div class="help-block with-errors"></div>
+			</div>
+             <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Proof</label>
+				<input type="file" accept="application/pdf" class="form-control" name="fileField" id="Phone" required>
+				<div class="help-block with-errors"> Required license /Adhaar Number</div>
+			</div>
+             <div class="form-group agileinfo wthree w3-agileits agile">
+				<label for="Phone" class="control-label">Username</label>
+				<input type="text" class="form-control" id="Phone" placeholder="Username" name="textfield8"  required>
+				<div class="help-block with-errors"></div>
+			</div>
+
+			<div class="form-group agile agileits-w3layouts w3-agile">
+				<label for="inputPassword" class="control-label">Password</label>
+				<div class="form-inline row">
+					<div class="form-group col-sm-6 agileits-w3layouts">
+						<input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" name="textfield9"  required>
+						<div class="help-block" id="A">Minimum of 6 characters</div>
+					</div>
+					<div class="form-group col-sm-6 w3-agile">
+						<input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm Password" name="textfield10" required>
+						<div class="help-block with-errors" id="B"></div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" id="C" class="btn btn-lg">Submit</button>
+			</div>
+		</form>
+    </div>
+
+<script>
+
+    document.getElementById("inputPassword").addEventListener("keyup",function () {
+        if (this.value != document.getElementById("inputPasswordConfirm").value){
+{#         document.getElementById("A").textContent='Confirm Password do not match';#}
+         document.getElementById("C").disabled=true;
+
+        }else{
+         document.getElementById("A").textContent='';
+         document.getElementById("C").disabled=false;
+        }
+
+    });
+    document.getElementById("inputPasswordConfirm").addEventListener("keyup",function () {
+
+
+        if (this.value != document.getElementById("inputPassword").value) {
+         document.getElementById("C").disabled=true;
+            document.getElementById("B").textContent = 'Confirm Password donot match';
+        }else{
+            document.getElementById("B").textContent='';
+         document.getElementById("C").disabled=false;
+        }
+
+    });
+
+</script>
+
+<p class="copyright-w3ls">© 2017 Authentication Signup Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>
+<!-- js files -->
+<script src="/static/oregis/js/jquery-1.10.2.min.js"></script>
+<script src="/static/oregis/js/bootstrap.min.js"></script>
+<script src="/static/oregis/js/validator.min.js"></script>
+<!-- /js files -->
+</body>
+</html>
